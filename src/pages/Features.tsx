@@ -1,0 +1,1 @@
+export default function Features() { return <h2 className="text-center text-2xl">Features Page</h2>; }
