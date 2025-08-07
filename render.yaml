@@ -3,7 +3,7 @@ services:
     name: zero-harm-ai-frontend
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://zero-harm-api.onrender.com
+        value: https://zero-harm-ai-backend.onrender.com
     buildCommand: npm run build
     staticPublishPath: dist
     branch: main
