@@ -1,70 +1,55 @@
-
-import { useState } from "react";
+import architectureDiagram from "../assets/architecture-diagram.png";
 
 export default function Home() {
-  const [input, setInput] = useState("");
-  const [method, setMethod] = useState("hybrid");
-  const [result, setResult] = useState<string | null>(null);
-
-  async function checkLLMOutput() {
-    const res = await fetch(`http://localhost:5000/api/moderate/${method}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ input }),
-    });
-    const data = await res.json();
-    if (data.error) {
-      setResult(`❌ Error: ${data.error}`);
-    } else {
-      setResult(data.flagged ? `⚠️ Flagged: ${data.reason}` : "✅ Safe");
-    }
-  }
-
   return (
-    <div className="text-center">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">Real-Time AI Firewall</h1>
-      <p className="mb-6 text-gray-600">
-        Secure your AI pipelines with real-time moderation.
-      </p>
-      <div className="max-w-xl mx-auto bg-white shadow p-6 rounded-lg">
-        <h2 className="text-xl font-semibold mb-4">Live LLM Moderation Demo</h2>
-        
-        <div className="mb-4 flex justify-center space-x-4">
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              value="hybrid"
-              checked={method === "hybrid"}
-              onChange={() => setMethod("hybrid")}
-            />
-            <span>Hybrid</span>
-          </label>
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              value="openai"
-              checked={method === "openai"}
-              onChange={() => setMethod("openai")}
-            />
-            <span>OpenAI API</span>
-          </label>
-        </div>
+    <div className="p-6">
+      <section className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">
+          Privacy Firewall for LLMs
+        </h1>
+        <p className="text-lg text-gray-700">
+          A runtime middleware/API that filters sensitive information in prompts and completions before they’re processed or stored — across any LLM provider.
+        </p>
+      </section>
 
-        <textarea
-          className="w-full p-3 border rounded mb-4"
-          rows={4}
-          placeholder="Enter LLM output here..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Ideal Users</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold mb-2">
+              AI teams at startups and SMBs
+            </h3>
+            <p>
+              Empower your AI projects with data privacy safeguards to protect customer trust.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold mb-2">
+              Enterprises in healthcare, legal, or customer support
+            </h3>
+            <p>
+              Stay compliant with privacy regulations and safeguard sensitive information.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold mb-2">
+              Developers building AI agents, copilots, or chat interfaces
+            </h3>
+            <p>
+              Integrate a privacy-first approach into your AI workflows from day one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-center">
+        <h2 className="text-2xl font-semibold mb-6">Architecture Overview</h2>
+        <img
+          src={architectureDiagram}
+          alt="Privacy Firewall Architecture"
+          className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
         />
-        <button
-          onClick={checkLLMOutput}
-          className="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700"
-        >
-          Check LLM Output
-        </button>
-        {result && <div className="mt-4 text-lg">{result}</div>}
-      </div>
+      </section>
     </div>
   );
 }
