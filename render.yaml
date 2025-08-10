@@ -1,6 +1,7 @@
 services:
-  - type: static
+  - type: web
     name: zero-harm-ai-frontend
+    env: static
     envVars:
       - key: VITE_BACKEND_URL
         value: https://zero-harm-ai-backend.onrender.com
