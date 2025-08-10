@@ -26,12 +26,44 @@ export default function Features() {
       const data = await res.json();
       setResult(data);
       setSuccess(true);
-      setTimeout(() => setSuccess(false), 1200); // remove highlight after animation
+      setTimeout(() => setSuccess(false), 1200);
     } catch (err: any) {
       setError(err.message || "Unknown error occurred");
     } finally {
       setLoading(false);
     }
+  };
+
+  // Updated helper to render detectors
+  const renderDetectors = (detectors: Record<string, any[]>) => {
+    if (!detectors || Object.keys(detectors).length === 0) {
+      return <div>No sensitive data detected.</div>;
+    }
+    return (
+      <div>
+        {Object.entries(detectors).map(([type, items]) => (
+          <div key={type} className="mb-2">
+            <div className="font-semibold">{type}:</div>
+            {items && items.length > 0 ? (
+              <ul className="list-disc pl-5">
+                {items.map((item, idx) => (
+                  <li key={idx}>
+                    <span className="font-mono bg-gray-100 px-1 rounded">
+                      {item.span}
+                    </span>{" "}
+                    <span className="text-xs text-gray-500">
+                      (start: {item.start}, end: {item.end})
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="text-gray-500 text-sm italic">No matches</div>
+            )}
+          </div>
+        ))}
+      </div>
+    );
   };
 
   const featuresLeft = [
@@ -111,6 +143,7 @@ export default function Features() {
         </motion.h2>
 
         <div className="flex flex-col md:flex-row gap-6">
+          {/* Input box */}
           <motion.textarea
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -121,25 +154,38 @@ export default function Features() {
             className="border p-3 w-full rounded-md"
             style={{ minHeight: "120px", flex: 1 }}
           />
+          {/* Redacted output box */}
           <motion.textarea
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              backgroundColor: success ? "#d1fae5" : "#f9fafb", // green when success
+              backgroundColor: success ? "#d1fae5" : "#f9fafb",
             }}
             transition={{ duration: 0.6 }}
             value={
               error
                 ? `Error:\n${error}`
-                : result
-                ? JSON.stringify(result, null, 2)
+                : result && result.redacted
+                ? result.redacted
                 : ""
             }
             readOnly
             className="border p-3 w-full rounded-md"
             style={{ minHeight: "120px", flex: 1 }}
-            placeholder="Result will appear here..."
+            placeholder="Redacted result will appear here..."
           />
+        </div>
+
+        {/* Detectors display */}
+        <div className="mt-4">
+          {error ? (
+            <div className="text-red-600 font-semibold">{error}</div>
+          ) : result && result.detectors ? (
+            <div>
+              <div className="font-semibold mb-2">Detected Entities:</div>
+              {renderDetectors(result.detectors)}
+            </div>
+          ) : null}
         </div>
 
         <motion.button
