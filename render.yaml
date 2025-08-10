@@ -2,37 +2,13 @@ services:
   - type: web
     name: zero-harm-ai-frontend
     env: static
-    envVars:
-      - key: VITE_BACKEND_URL
-        value: https://zero-harm-ai-backend.onrender.com
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     branch: main
+    envVars:
+      - key: VITE_BACKEND_URL
+        value: https://zero-harm-ai-backend.onrender.com
     routes:
-      # Long-term cache for assets (hashed filenames)
-      - type: static
-        source: /assets/*
-        headers:
-          Cache-Control: public, max-age=31536000, immutable
-
-      - type: static
-        source: /*.js
-        headers:
-          Cache-Control: public, max-age=31536000, immutable
-
-      - type: static
-        source: /*.css
-        headers:
-          Cache-Control: public, max-age=31536000, immutable
-
-      # Always serve latest HTML
-      - type: static
-        source: /*.html
-        headers:
-          Cache-Control: no-cache
-
-      # SPA fallback for client-side routes
       - type: rewrite
         source: /*
         destination: /index.html
-
