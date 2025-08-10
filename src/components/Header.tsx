@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/privacy-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -16,7 +17,7 @@ export default function Header() {
         {/* Logo + Title */}
         <div className="flex items-center space-x-3">
           <img
-            src="../assets/privacy-logo.png" // replace with your actual logo path
+            src={logo} 
             alt="Zero Harm AI Logo"
             className="h-8 w-8"
           />
