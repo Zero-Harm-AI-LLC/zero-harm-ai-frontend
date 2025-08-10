@@ -5,8 +5,14 @@ import Home from "./pages/Home";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
 import Docs from "./pages/Docs";
+import { useEffect } from "react";
+import { API_ENDPOINTS } from "./config";
 
 function App() {
+  useEffect(() => {
+    fetch(API_ENDPOINTS.HEALTH_CHECK).catch(() => {});
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
