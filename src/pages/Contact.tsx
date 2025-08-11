@@ -32,7 +32,7 @@ export default function Contact() {
       setMessage("");
     } catch (err) {
       console.error("Error sending message:", err);
-      setToast({ type: "error", message: "❌ Failed to send message. Try again." });
+      setToast({ type: "error", message: "❌ Failed to send message:" + err });
     } finally {
       setLoading(false);
     }
