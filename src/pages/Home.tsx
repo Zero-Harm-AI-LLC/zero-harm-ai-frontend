@@ -13,7 +13,7 @@ export default function Home() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Ideal Users</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">Who We Help</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold mb-2">
@@ -43,7 +43,8 @@ export default function Home() {
       </section>
 
       <section className="text-center">
-        <h2 className="text-2xl font-semibold mb-6">Architecture Overview</h2>
+        <h2 className="text-2xl font-semibold mb-6">How It Works</h2>
+        <h3 className="text-xl font-semibold mb-4">A high-level look at our privacy firewall system</h3>
         <img
           src={architectureDiagram}
           alt="Privacy Firewall Architecture"
