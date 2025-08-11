@@ -1,6 +1,10 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import architectureDiagram from "../assets/architecture-diagram.png";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="p-6">
       <section className="text-center mb-12">
@@ -48,9 +52,32 @@ export default function Home() {
         <img
           src={architectureDiagram}
           alt="Privacy Firewall Architecture"
-          className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
+          className="mx-auto rounded-lg shadow-lg max-w-full h-auto mb-6"
         />
+
+        {/* Fade-in & slide-up buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex justify-center gap-4"
+        >
+          <button
+            onClick={() => navigate("/contact")}
+            className="flex items-center justify-center gap-2 px-6 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700"
+          >
+            Contact Us
+          </button>
+
+          <button
+            onClick={() => navigate("/features")}
+            className="flex items-center justify-center gap-2 px-6 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700"
+          >
+            Learn More
+          </button>
+        </motion.div>
       </section>
     </div>
   );
 }
+
