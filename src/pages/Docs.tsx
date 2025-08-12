@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { Copy, Search } from "lucide-react"; // Make sure to install lucide-react
+import Toast from "../components/Toast";
 
 export default function Docs() {
     const tabs = ["Product Brochure", "APIs", "Integration Guides"];
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
     const handleCopy = (text: string) => {
         navigator.clipboard.writeText(text);
         alert("Copied to clipboard!");
+    };
+
+    const handleToastClick = () => {
+        setToast({ type: "success", message: "Document is in working progress" });
     };
 
     const renderContent = () => {
@@ -22,12 +28,12 @@ export default function Docs() {
                             Download the latest brochure to see how our products can help
                             your business.
                         </p>
-                        <a
-                            href="/docs/product-brochure.pdf"
+                        <button
+                            onClick={handleToastClick}
                             className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                         >
                             View Brochure
-                        </a>
+                        </button>
                     </div>
                 );
 
@@ -58,10 +64,10 @@ export default function Docs() {
                                     onClick={() =>
                                         handleCopy(`from zeroharmai import detect_pii
 
-        text = "Call me at 555-123-4567 or email john@example.com"
-        results = detect_pii(text)
+text = "Call me at 555-123-4567 or email john@example.com"
+results = detect_pii(text)
 
-        print(results)`)
+print(results)`)
                                     }
                                 >
                                     📋
@@ -69,10 +75,10 @@ export default function Docs() {
                             </div>
                             <pre>{`from zeroharmai import detect_pii
 
-        text = "Call me at 555-123-4567 or email john@example.com"
-        results = detect_pii(text)
+text = "Call me at 555-123-4567 or email john@example.com"
+results = detect_pii(text)
 
-        print(results)`}</pre>
+print(results)`}</pre>
                         </div>
 
                         {/* Example: mask_pii */}
@@ -83,10 +89,10 @@ export default function Docs() {
                                     onClick={() =>
                                         handleCopy(`from zeroharmai import mask_pii
 
-        text = "SSN: 123-45-6789"
-        masked = mask_pii(text)
+text = "SSN: 123-45-6789"
+masked = mask_pii(text)
 
-        print(masked)`)
+print(masked)`)
                                     }
                                 >
                                     📋
@@ -94,10 +100,10 @@ export default function Docs() {
                             </div>
                             <pre>{`from zeroharmai import mask_pii
 
-        text = "SSN: 123-45-6789"
-        masked = mask_pii(text)
+text = "SSN: 123-45-6789"
+masked = mask_pii(text)
 
-        print(masked)`}</pre>
+print(masked)`}</pre>
                         </div>
 
                         {/* Example: redact_pii */}
@@ -108,10 +114,10 @@ export default function Docs() {
                                     onClick={() =>
                                         handleCopy(`from zeroharmai import redact_pii
 
-        text = "Jane Doe, jane@example.com"
-        redacted = redact_pii(text)
+text = "Jane Doe, jane@example.com"
+redacted = redact_pii(text)
 
-        print(redacted)`)
+print(redacted)`)
                                     }
                                 >
                                     📋
@@ -119,17 +125,17 @@ export default function Docs() {
                             </div>
                             <pre>{`from zeroharmai import redact_pii
 
-        text = "Jane Doe, jane@example.com"
-        redacted = redact_pii(text)
+text = "Jane Doe, jane@example.com"
+redacted = redact_pii(text)
 
-        print(redacted)`}</pre>
+print(redacted)`}</pre>
                         </div>
-                        <a
-                            href="/python-library-docs"
-                            className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+                        <button
+                            onClick={handleToastClick}
+                            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                         >
                             Full Python Library Docs
-                        </a>
+                        </button>
                     </div>
                 );
 
@@ -143,28 +149,28 @@ export default function Docs() {
                         </p>
                         <ul className="list-disc pl-5 text-gray-700 space-y-1">
                             <li>
-                                <a
-                                    href="/integration-guides/react"
+                                <button
+                                    onClick={handleToastClick}
                                     className="text-blue-600 hover:underline"
                                 >
                                     React App Integration
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a
-                                    href="/integration-guides/node"
+                                <button
+                                    onClick={handleToastClick}
                                     className="text-blue-600 hover:underline"
                                 >
                                     Node.js Backend Integration
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a
-                                    href="/integration-guides/python"
+                                <button
+                                    onClick={handleToastClick}
                                     className="text-blue-600 hover:underline"
                                 >
                                     Python Flask Integration
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -203,10 +209,11 @@ export default function Docs() {
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`px-6 py-2 font-medium transition-colors ${activeTab === tab
+                        className={`px-6 py-2 font-medium transition-colors ${
+                            activeTab === tab
                                 ? "border-b-2 border-blue-600 text-blue-600"
                                 : "text-gray-500 hover:text-blue-500"
-                            }`}
+                        }`}
                     >
                         {tab}
                     </button>
@@ -215,6 +222,15 @@ export default function Docs() {
 
             {/* Content */}
             <div className="bg-white rounded-xl shadow-md">{renderContent()}</div>
+
+            {/* Toast */}
+            {toast && (
+                <Toast
+                    type={toast.type}
+                    message={toast.message}
+                    onClose={() => setToast(null)}
+                />
+            )}
         </div>
     );
 }
