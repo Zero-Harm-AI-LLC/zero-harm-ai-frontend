@@ -21,9 +21,11 @@ export default function Toast({ type, message, onClose }: ToastProps) {
 
   return (
     <div
-      className={`fixed top-5 right-5 px-4 py-3 rounded shadow-lg text-white transition-opacity duration-1000 z-50 ${
-        fadeOut ? "opacity-0" : "opacity-100"
-      } ${type === "success" ? "bg-green-600" : "bg-red-600"}`}
+      className={`fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
+        px-6 py-4 rounded shadow-lg text-white text-lg font-medium
+        transition-opacity duration-1000 z-50
+        ${fadeOut ? "opacity-0" : "opacity-100"}
+        ${type === "success" ? "bg-green-600" : "bg-red-600"}`}
     >
       {message}
     </div>
