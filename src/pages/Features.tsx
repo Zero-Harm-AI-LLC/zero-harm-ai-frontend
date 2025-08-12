@@ -77,7 +77,8 @@ export default function Features() {
     "Configurable Redaction Rules.",
     "Audit & Reporting for compliance.",
     "SDK & Middleware APIs for easy integration.",
-    "Future-ready privacy modules.",
+    "Future-ready data firewall modules.",
+    "Containerized for easy deployment.",
   ];
 
   const listVariants = {
@@ -139,7 +140,7 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-2xl font-semibold mb-4"
         >
-          Live Privacy Check Demo
+          Live Check Demo
         </motion.h2>
 
         <div className="flex flex-col md:flex-row gap-6">
@@ -222,7 +223,7 @@ export default function Features() {
               ></path>
             </svg>
           )}
-          {loading ? "Checking..." : "Check Privacy"}
+          {loading ? "Checking..." : "Check"}
         </motion.button>
       </div>
     </div>
