@@ -70,7 +70,7 @@ export default function Features() {
     "Pre-Processing Filter: Detect & redact sensitive data before sending to LLM.",
     "Post-Processing Filter: Scan outputs before showing to end users.",
     "Advanced Detection: NER, Regex, and ML-based approaches.",
-    "Secrets Scanner: Find API keys, passwords, credit card numbers.",
+    "Real-time Redaction: Instant feedback on sensitive data.",
   ];
 
   const featuresRight = [
