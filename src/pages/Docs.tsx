@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Copy, Search } from "lucide-react"; // Make sure to install lucide-react
+import { Copy, Search } from "lucide-react";
 import Toast from "../components/Toast";
 
 export default function Docs() {
-    const tabs = ["Product Brochure", "APIs", "Integration Guides"];
+    const tabs = ["Product Brochure", "APIs", "Integration Guides", "Resources"];
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [searchQuery, setSearchQuery] = useState("");
     const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
@@ -46,7 +46,6 @@ export default function Docs() {
                             directly from your code. No network requests required — all processing
                             happens locally.
                         </p>
-
                         {/* Installation */}
                         <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm">
                             <div className="flex justify-between items-center mb-2">
@@ -55,7 +54,6 @@ export default function Docs() {
                             </div>
                             <pre>{`pip install zeroharmai`}</pre>
                         </div>
-
                         {/* Example: detect_pii */}
                         <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm">
                             <div className="flex justify-between items-center mb-2">
@@ -80,7 +78,6 @@ results = detect_pii(text)
 
 print(results)`}</pre>
                         </div>
-
                         {/* Example: mask_pii */}
                         <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm">
                             <div className="flex justify-between items-center mb-2">
@@ -105,7 +102,6 @@ masked = mask_pii(text)
 
 print(masked)`}</pre>
                         </div>
-
                         {/* Example: redact_pii */}
                         <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm">
                             <div className="flex justify-between items-center mb-2">
@@ -176,6 +172,33 @@ print(redacted)`}</pre>
                     </div>
                 );
 
+            case "Resources":
+                return (
+                    <div className="p-6 space-y-4">
+                        <h2 className="text-xl font-semibold">📚 Resources</h2>
+                        <p className="text-gray-600">
+                            External references, tools, and useful documentation for deeper learning.
+                        </p>
+                        <ul className="list-disc pl-5 text-blue-600 space-y-2">
+                            <li>
+                                <a href="https://example.com/resource1" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                    Resource Link 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://example.com/resource2" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                    Resource Link 2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://example.com/resource3" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                    Resource Link 3
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                );
+
             default:
                 return null;
         }
@@ -183,11 +206,8 @@ print(redacted)`}</pre>
 
     return (
         <div className="container mx-auto px-4 py-8">
-            {/* Page Header */}
             <div className="flex flex-col md:flex-row justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold">Developer Documentation</h1>
-
-                {/* Search Bar */}
                 <div className="relative w-full md:w-72 mt-4 md:mt-0">
                     <Search
                         className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -202,8 +222,6 @@ print(redacted)`}</pre>
                     />
                 </div>
             </div>
-
-            {/* Tabs */}
             <div className="flex border-b border-gray-200 mb-6">
                 {tabs.map((tab) => (
                     <button
@@ -219,11 +237,7 @@ print(redacted)`}</pre>
                     </button>
                 ))}
             </div>
-
-            {/* Content */}
             <div className="bg-white rounded-xl shadow-md">{renderContent()}</div>
-
-            {/* Toast */}
             {toast && (
                 <Toast
                     type={toast.type}
