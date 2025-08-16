@@ -52,7 +52,7 @@ export default function Home() {
         <img
           src={architectureDiagram}
           alt="Data Firewall Architecture"
-          className="mx-auto rounded-lg shadow-lg max-w-full h-auto mb-6"
+          className="mx-auto rounded-lg shadow-lg w-full h-auto mb-6"
         />
 
         {/* Fade-in & slide-up buttons */}
