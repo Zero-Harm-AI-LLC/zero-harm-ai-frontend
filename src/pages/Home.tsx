@@ -50,7 +50,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-6">How It Works</h2>
         <h3 className="text-xl font-semibold mb-4">A high-level look at our data firewall system</h3>
         <img
-          src={architectureDiagram}
+          src="/Privacy.svg"
           alt="Data Firewall Architecture"
           className="mx-auto rounded-lg shadow-lg max-w-full h-auto mb-6"
         />
