@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Features from "./pages/Features";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Donate";
 import Docs from "./pages/Docs";
 import { useEffect } from "react";
 import { API_ENDPOINTS } from "./config";

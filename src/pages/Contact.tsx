@@ -41,34 +41,38 @@ export default function Contact() {
   return (
     <div className="max-w-xl mx-auto py-12 px-4">
       <motion.h2
-        className="text-3xl font-bold mb-6 text-center"
+        className="text-3xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Contact Us
+        Partner With Us
       </motion.h2>
+      <p className="text-center text-gray-600 mb-8">
+        We are a non-profit organization working to make AI safer, more private, and more ethical. 
+        Whether you are a researcher, company, or individual, we’d love to collaborate, hear your feedback, or explore partnership opportunities.
+      </p>
 
       <form className="space-y-4" onSubmit={sendContactForm}>
         <input
           type="text"
-          placeholder="Name"
-          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition"
+          placeholder="Your Name"
+          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-green-500 outline-none transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
         <input
           type="email"
-          placeholder="Email"
-          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition"
+          placeholder="Your Email"
+          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-green-500 outline-none transition"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <textarea
           rows={5}
-          placeholder="Message"
-          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition"
+          placeholder="Your Message (e.g., collaboration, feedback, volunteering, partnership)"
+          className="w-full p-3 border rounded shadow-sm focus:ring-2 focus:ring-green-500 outline-none transition"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
@@ -76,7 +80,7 @@ export default function Contact() {
 
         <motion.button
           type="submit"
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center gap-2 transition"
+          className="bg-green-700 text-white px-6 py-3 rounded-lg shadow hover:bg-green-800 disabled:opacity-50 flex items-center justify-center gap-2 transition"
           disabled={loading || !name || !email || !message}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
@@ -90,6 +94,15 @@ export default function Contact() {
           )}
         </motion.button>
       </form>
+
+      <div className="mt-8 text-center text-gray-700">
+        <p>
+          You can also reach us at <a href="mailto:contact@zeroharmai.org" className="text-green-700 underline">contact@zeroharmai.org</a>
+        </p>
+        <p className="mt-2">
+          Interested in supporting our mission? <a href="/donate" className="text-green-700 underline">Donate here</a>
+        </p>
+      </div>
 
       <AnimatePresence>
         {toast && (

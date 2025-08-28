@@ -34,7 +34,6 @@ export default function Features() {
     }
   };
 
-  // Updated helper to render detectors
   const renderDetectors = (detectors: Record<string, any[]>) => {
     if (!detectors || Object.keys(detectors).length === 0) {
       return <div>No sensitive data detected.</div>;
@@ -67,18 +66,18 @@ export default function Features() {
   };
 
   const featuresLeft = [
-    "Pre-Processing Filter: Detect & redact sensitive data before sending to LLM.",
-    "Post-Processing Filter: Scan outputs before showing to end users.",
-    "Advanced Detection: NER, Regex, and ML-based approaches.",
-    "Real-time Redaction: Instant feedback on sensitive data.",
+    "Detect & redact sensitive data before sending to AI systems.",
+    "Scan AI outputs before showing to end users.",
+    "Advanced detection powered by NER, Regex, and ML approaches.",
+    "Instant feedback and real-time redaction.",
   ];
 
   const featuresRight = [
-    "Configurable Redaction Rules.",
-    "Audit & Reporting for compliance.",
-    "SDK & Middleware APIs for easy integration.",
-    "Future-ready data firewall modules.",
-    "Containerized for easy deployment.",
+    "Configurable rules tailored to organizational needs.",
+    "Audit & reporting tools to strengthen compliance.",
+    "Open SDKs & middleware for easy adoption.",
+    "Future-ready privacy & safety modules.",
+    "Containerized deployment for accessibility & openness.",
   ];
 
   const listVariants = {
@@ -98,10 +97,14 @@ export default function Features() {
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold mb-6"
       >
-        Core Product Pillars
+        Our Approach to Safer AI
       </motion.h1>
 
-      {/* Two-column staggered feature list */}
+      <p className="text-gray-700 max-w-3xl mb-8">
+        As a non-profit, our goal is to provide open, transparent tools that help organizations use AI responsibly. 
+        We build privacy-first technology to protect people, foster trust, and ensure that AI adoption aligns with human values.
+      </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <ul className="list-disc pl-6 space-y-2">
           {featuresLeft.map((feat, i) => (
@@ -143,8 +146,11 @@ export default function Features() {
           Live Check Demo
         </motion.h2>
 
+        <p className="text-gray-600 mb-4">
+          Try out our demo tool to see how we detect and redact sensitive data. This is part of our mission to make safe AI accessible to everyone.
+        </p>
+
         <div className="flex flex-col md:flex-row gap-6">
-          {/* Input box */}
           <motion.textarea
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -155,7 +161,6 @@ export default function Features() {
             className="border p-3 w-full rounded-md"
             style={{ minHeight: "120px", flex: 1 }}
           />
-          {/* Redacted output box */}
           <motion.textarea
             initial={{ opacity: 0 }}
             animate={{
@@ -177,7 +182,6 @@ export default function Features() {
           />
         </div>
 
-        {/* Detectors display */}
         <div className="mt-4">
           {error ? (
             <div className="text-red-600 font-semibold">{error}</div>
@@ -198,7 +202,7 @@ export default function Features() {
           className={`mt-4 flex items-center justify-center gap-2 px-6 py-2 rounded-md text-white ${
             loading
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
+              : "bg-green-700 hover:bg-green-800"
           }`}
         >
           {loading && (
@@ -225,6 +229,19 @@ export default function Features() {
           )}
           {loading ? "Checking..." : "Check"}
         </motion.button>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-xl font-semibold mb-4">Join the Mission</h2>
+        <p className="text-gray-600">
+          We invite researchers, developers, and organizations to partner with us. Together, we can ensure AI works in service of humanity.
+        </p>
+        <a
+          href="/donate"
+          className="inline-block mt-4 px-6 py-3 bg-green-700 text-white rounded-lg shadow hover:bg-green-800"
+        >
+          Support Our Work
+        </a>
       </div>
     </div>
   );

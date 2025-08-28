@@ -3,15 +3,16 @@ import logo from "../assets/privacy-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Features", path: "/features" },
-  { name: "Docs", path: "/docs" },
+  { name: "About", path: "/about" },
+  { name: "Our Approach", path: "/features" },
+  { name: "Support", path: "/donate" },
   { name: "Contact", path: "/contact" },
 ];
 
 export default function Header() {
   const { pathname } = useLocation();
   return (
-    <header className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+    <header className="bg-green-700 text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         
         {/* Logo + Title */}
@@ -32,8 +33,8 @@ export default function Header() {
               to={path}
               className={
                 pathname === path
-                  ? "text-blue-400 font-semibold"
-                  : "hover:text-blue-400"
+                  ? "text-yellow-200 font-semibold"
+                  : "hover:text-yellow-100"
               }
             >
               {name}
@@ -45,4 +46,3 @@ export default function Header() {
     </header>
   );
 }
-
