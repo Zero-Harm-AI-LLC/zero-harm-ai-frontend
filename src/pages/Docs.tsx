@@ -22,17 +22,25 @@ export default function Docs() {
             case "Product Brochure":
                 return (
                     <div className="p-4 md:p-6 space-y-4">
-                        <h2 className="text-xl font-semibold">📄 Product Brochure</h2>
+                        <h2 className="text-xl font-semibold">📋 Open Source AI Safety Solutions</h2>
                         <p className="text-gray-600">
-                            Learn about our solutions, features, and value proposition.
-                            Download the latest brochure to see how our products can help
-                            your business.
+                            Learn about our free, open source AI safety tools designed specifically for small and medium businesses. 
+                            Download our product overview to see how we make enterprise-grade AI safety accessible to everyone.
                         </p>
+                        <div className="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 className="font-semibold text-blue-800 mb-2">🆓 100% Free & Open Source</h3>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                                <li>• No licensing fees or vendor lock-in</li>
+                                <li>• Full source code available on GitHub</li>
+                                <li>• Community-driven development</li>
+                                <li>• Professional consulting available</li>
+                            </ul>
+                        </div>
                         <button
                             onClick={handleToastClick}
                             className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors"
                         >
-                            View Brochure
+                            Download Product Overview
                         </button>
                     </div>
                 );
@@ -40,12 +48,20 @@ export default function Docs() {
             case "APIs":
                 return (
                     <div className="p-4 md:p-6 space-y-4">
-                        <h2 className="text-xl font-semibold">🐍 Python Library API</h2>
+                        <h2 className="text-xl font-semibold">🐍 Free Python Library for SMBs</h2>
                         <p className="text-gray-600">
-                            Our Python library provides simple, native functions you can call
-                            directly from your code. No network requests required — all processing
-                            happens locally.
+                            Our open source Python library provides enterprise-grade AI safety tools that small and medium businesses 
+                            can use for free. No network requests, no data sharing - everything runs locally on your infrastructure.
                         </p>
+                        <div className="bg-green-50 p-4 rounded-lg mb-4">
+                            <h3 className="font-semibold text-green-800 mb-2">🏢 Perfect for SMBs</h3>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                                <li>• Zero licensing costs</li>
+                                <li>• Runs on your own servers</li>
+                                <li>• No external API dependencies</li>
+                                <li>• Easy Docker deployment</li>
+                            </ul>
+                        </div>
                         {/* Installation */}
                         <div className="bg-gray-900 text-white p-3 md:p-4 rounded-lg font-mono text-xs md:text-sm overflow-x-auto">
                             <div className="flex justify-between items-center mb-2 min-w-max">
@@ -142,26 +158,38 @@ print(redacted)`}</pre>
                             onClick={handleToastClick}
                             className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors"
                         >
-                            Full Python Library Docs
+                            Full Documentation & GitHub
                         </button>
+                        <div className="mt-4 text-sm text-gray-600">
+                            <p>💡 Need help implementing? Our consulting team specializes in helping SMBs deploy these tools successfully.</p>
+                        </div>
                     </div>
                 );
 
             case "Integration Guides":
                 return (
                     <div className="p-4 md:p-6 space-y-4">
-                        <h2 className="text-xl font-semibold">🔗 Integration Guides</h2>
+                        <h2 className="text-xl font-semibold">🔗 SMB Integration Guides</h2>
                         <p className="text-gray-600">
-                            Step-by-step guides and best practices for integrating our
-                            services into your workflows and applications.
+                            Step-by-step guides written specifically for small and medium businesses. 
+                            These tutorials assume limited DevOps resources and focus on simple, reliable deployments.
                         </p>
+                        <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h3 className="font-semibold text-yellow-800 mb-2">🚀 Quick Start Options</h3>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                                <li>• Docker one-click deployment</li>
+                                <li>• Cloud marketplace integrations</li>
+                                <li>• Starter templates for common frameworks</li>
+                                <li>• Budget-friendly hosting recommendations</li>
+                            </ul>
+                        </div>
                         <ul className="list-disc pl-5 text-gray-700 space-y-2">
                             <li>
                                 <button
                                     onClick={handleToastClick}
                                     className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
                                 >
-                                    React App Integration
+                                    Small Business React App Integration
                                 </button>
                             </li>
                             <li>
@@ -169,7 +197,7 @@ print(redacted)`}</pre>
                                     onClick={handleToastClick}
                                     className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
                                 >
-                                    Node.js Backend Integration
+                                    Budget-Friendly Node.js Deployment
                                 </button>
                             </li>
                             <li>
@@ -177,37 +205,101 @@ print(redacted)`}</pre>
                                     onClick={handleToastClick}
                                     className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
                                 >
-                                    Python Flask Integration
+                                    Docker Container Setup for SMBs
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={handleToastClick}
+                                    className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                >
+                                    WordPress Plugin Integration
                                 </button>
                             </li>
                         </ul>
+                        <div className="mt-4 text-sm text-gray-600 bg-blue-50 p-3 rounded">
+                            <p>💼 <strong>Need Professional Help?</strong> Our consulting team offers implementation services starting at $2,500 for complete setup and training.</p>
+                        </div>
                     </div>
                 );
 
             case "Resources":
                 return (
                     <div className="p-4 md:p-6 space-y-4">
-                        <h2 className="text-xl font-semibold">📚 Resources</h2>
+                        <h2 className="text-xl font-semibold">📚 Learning Resources</h2>
                         <p className="text-gray-600">
-                            External references, tools, and useful documentation for deeper learning.
+                            Educational materials, research papers, and external resources for learning about responsible AI development. 
+                            Perfect for students, new engineers, and SMB teams getting started with AI safety.
                         </p>
-                        <ul className="list-disc pl-5 text-blue-600 space-y-2">
-                            <li>
-                                <a href="https://example.com/resource1" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                    Resource Link 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://example.com/resource2" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                    Resource Link 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://example.com/resource3" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                    Resource Link 3
-                                </a>
-                            </li>
-                        </ul>
+                        
+                        <div className="space-y-4">
+                            <div className="bg-purple-50 p-4 rounded-lg">
+                                <h3 className="font-semibold text-purple-800 mb-2">🎓 For Students & New Engineers</h3>
+                                <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
+                                    <li>
+                                        <a href="https://example.com/ai-safety-101" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            AI Safety 101: A Beginner's Guide
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/ethics-checklist" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            Ethical AI Development Checklist
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/student-projects" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            Sample Student Projects & Code
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div className="bg-green-50 p-4 rounded-lg">
+                                <h3 className="font-semibold text-green-800 mb-2">🏢 For Small & Medium Businesses</h3>
+                                <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
+                                    <li>
+                                        <a href="https://example.com/smb-ai-guide" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            SMB Guide to Responsible AI Adoption
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/budget-ai-safety" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            AI Safety on a Startup Budget
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/compliance-guide" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            GDPR/CCPA Compliance for AI Systems
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div className="bg-blue-50 p-4 rounded-lg">
+                                <h3 className="font-semibold text-blue-800 mb-2">🔬 Research & Technical Papers</h3>
+                                <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
+                                    <li>
+                                        <a href="https://example.com/pii-detection-paper" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            "Open Source PII Detection: A Comparative Study"
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/smb-ai-risks" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            "AI Risks in Small Business Environments"
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://example.com/democratizing-ai-safety" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            "Democratizing AI Safety Through Open Source"
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded">
+                            <p>📧 <strong>Stay Updated:</strong> Subscribe to our newsletter for the latest research, student opportunities, and SMB-focused AI safety resources.</p>
+                        </div>
                     </div>
                 );
 
@@ -219,7 +311,10 @@ print(redacted)`}</pre>
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
-                <h1 className="text-2xl md:text-3xl font-bold">Developer Documentation</h1>
+                <div>
+                    <h1 className="text-2xl md:text-3xl font-bold">Open Source AI Safety Documentation</h1>
+                    <p className="text-gray-600 mt-2">Free tools and resources for responsible AI development</p>
+                </div>
                 <div className="relative w-full lg:w-72">
                     <Search
                         className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -256,6 +351,28 @@ print(redacted)`}</pre>
             
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
                 {renderContent()}
+            </div>
+            
+            {/* Add footer section */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-blue-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-semibold text-blue-800 mb-2">🎓 Student Resources</h3>
+                    <p className="text-gray-700 text-sm mb-3">
+                        Learning AI safety? Check out our internship program and project sponsorship opportunities.
+                    </p>
+                    <a href="/donate" className="text-blue-600 hover:underline text-sm font-medium">
+                        View Student Programs →
+                    </a>
+                </div>
+                <div className="bg-green-50 p-6 rounded-lg">
+                    <h3 className="text-lg font-semibold text-green-800 mb-2">💼 Need Implementation Help?</h3>
+                    <p className="text-gray-700 text-sm mb-3">
+                        Our consulting team helps SMBs deploy these tools successfully with training and ongoing support.
+                    </p>
+                    <a href="/contact" className="text-green-600 hover:underline text-sm font-medium">
+                        Get Consulting Quote →
+                    </a>
+                </div>
             </div>
             
             {toast && (

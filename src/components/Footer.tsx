@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="text-center sm:text-left mb-4 sm:mb-0">
           <p className="font-semibold text-green-800">Zero Harm AI</p>
           <p className="text-xs max-w-xs text-gray-600">
-            A non-profit organization dedicated to helping companies adopt AI in a secure, ethical, and less harmful way.
+            An open source organization dedicated to helping companies adopt AI in a secure, ethical, and less harmful way.
           </p>
         </div>
 

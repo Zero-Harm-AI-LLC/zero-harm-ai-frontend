@@ -3,10 +3,11 @@ import logo from "../assets/privacy-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
   { name: "Our Approach", path: "/features" },
+  { name: "Docs", path: "/docs" },
   { name: "Support", path: "/donate" },
   { name: "Contact", path: "/contact" },
+  { name: "About", path: "/about" },
 ];
 
 export default function Header() {

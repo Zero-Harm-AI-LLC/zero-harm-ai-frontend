@@ -66,18 +66,19 @@ export default function Features() {
   };
 
   const featuresLeft = [
-    "Detect & redact sensitive data before sending to AI systems.",
-    "Scan AI outputs before showing to end users.",
-    "Advanced detection powered by NER, Regex, and ML approaches.",
-    "Instant feedback and real-time redaction.",
+    "🆓 Free & open source - no licensing fees or vendor lock-in",
+    "🏢 Built specifically for small & medium businesses",
+    "🔍 Advanced PII detection using NER, Regex, and ML approaches",
+    "⚡ Real-time processing with instant feedback",
+    "🛡️ Privacy-first design - your data never leaves your infrastructure",
   ];
 
   const featuresRight = [
-    "Configurable rules tailored to organizational needs.",
-    "Audit & reporting tools to strengthen compliance.",
-    "Open SDKs & middleware for easy adoption.",
-    "Future-ready privacy & safety modules.",
-    "Containerized deployment for accessibility & openness.",
+    "⚙️ Configurable rules tailored to your business needs",
+    "📊 Compliance reporting for GDPR, CCPA, and industry standards",
+    "🔌 Easy integration with REST APIs and Python SDKs",
+    "🐳 Docker deployment - runs anywhere you need it",
+    "👥 Community support and enterprise consulting available",
   ];
 
   const listVariants = {
@@ -97,16 +98,24 @@ export default function Features() {
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold mb-6"
       >
-        Our Approach to Safer AI
+        Open Source AI Safety Tools for SMBs
       </motion.h1>
 
-      <p className="text-gray-700 max-w-3xl mb-8">
-        As a non-profit, our goal is to provide open, transparent tools that help organizations use AI responsibly. 
-        We build privacy-first technology to protect people, foster trust, and ensure that AI adoption aligns with human values.
+      <p className="text-gray-700 max-w-4xl mb-8">
+        Our enterprise-grade AI safety tools are completely free and open source. We believe that responsible AI shouldn't be a privilege for large corporations only. 
+        Small and medium businesses deserve the same level of protection and ethical AI practices. Download our tools, use them freely, and get professional consulting when you need implementation help.
       </p>
 
+      <div className="mb-8 bg-blue-50 p-6 rounded-lg">
+        <h3 className="text-xl font-semibold mb-2 text-blue-800">💡 Why Open Source?</h3>
+        <p className="text-gray-700">
+          Unlike proprietary solutions that cost thousands per month, our open source approach means you can start using enterprise-grade AI safety tools today, 
+          for free. You can inspect the code, contribute improvements, and never worry about vendor lock-in or surprise pricing changes.
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="space-y-3">
           {featuresLeft.map((feat, i) => (
             <motion.li
               key={i}
@@ -114,13 +123,14 @@ export default function Features() {
               variants={listVariants}
               initial="hidden"
               animate="visible"
-              className="text-gray-700"
+              className="text-gray-700 flex items-start"
             >
-              {feat}
+              <span className="mr-2">•</span>
+              <span>{feat}</span>
             </motion.li>
           ))}
         </ul>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="space-y-3">
           {featuresRight.map((feat, i) => (
             <motion.li
               key={i}
@@ -128,9 +138,10 @@ export default function Features() {
               variants={listVariants}
               initial="hidden"
               animate="visible"
-              className="text-gray-700"
+              className="text-gray-700 flex items-start"
             >
-              {feat}
+              <span className="mr-2">•</span>
+              <span>{feat}</span>
             </motion.li>
           ))}
         </ul>
@@ -143,11 +154,12 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-2xl font-semibold mb-4"
         >
-          Live Check Demo
+          Live Demo - Try It Now
         </motion.h2>
 
         <p className="text-gray-600 mb-4">
-          Try out our demo tool to see how we detect and redact sensitive data. This is part of our mission to make safe AI accessible to everyone.
+          Test our PII detection tool right here in your browser. This is the same engine that powers our open source libraries - 
+          see how it can protect your business from accidentally exposing sensitive customer data to AI systems.
         </p>
 
         <div className="flex flex-col md:flex-row gap-6">
@@ -227,20 +239,51 @@ export default function Features() {
               ></path>
             </svg>
           )}
-          {loading ? "Checking..." : "Check"}
+          {loading ? "Checking..." : "Check for PII"}
         </motion.button>
       </div>
 
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-green-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4 text-green-800">🚀 Ready to Get Started?</h3>
+          <p className="text-gray-700 mb-4">
+            Download our open source tools and start protecting your AI applications today. 
+            No registration required, no limits, no surprises.
+          </p>
+          <a
+            href="/docs"
+            className="inline-block px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800"
+          >
+            View Documentation
+          </a>
+        </div>
+
+        <div className="bg-blue-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4 text-blue-800">🤝 Need Implementation Help?</h3>
+          <p className="text-gray-700 mb-4">
+            Our consulting team helps SMBs implement responsible AI practices. 
+            From strategy to deployment, we've got you covered.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800"
+          >
+            Get Consulting
+          </a>
+        </div>
+      </div>
+
       <div className="mt-12">
-        <h2 className="text-xl font-semibold mb-4">Join the Mission</h2>
-        <p className="text-gray-600">
-          We invite researchers, developers, and organizations to partner with us. Together, we can ensure AI works in service of humanity.
+        <h2 className="text-xl font-semibold mb-4">Supporting the Next Generation</h2>
+        <p className="text-gray-600 mb-4">
+          We believe in teaching responsible AI from the start. That's why we sponsor student projects, 
+          offer internships, and provide mentorship to computer science students learning AI development.
         </p>
         <a
           href="/donate"
-          className="inline-block mt-4 px-6 py-3 bg-green-700 text-white rounded-lg shadow hover:bg-green-800"
+          className="inline-block px-6 py-3 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700"
         >
-          Support Our Work
+          Learn About Student Programs
         </a>
       </div>
     </div>
