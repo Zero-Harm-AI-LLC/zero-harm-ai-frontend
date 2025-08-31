@@ -100,33 +100,6 @@ export default function Donate() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Success Stories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <h4 className="font-semibold mb-2">Sarah Chen</h4>
-            <p className="text-sm text-gray-600 mb-2">Stanford CS '24</p>
-            <p className="text-gray-700 text-sm">
-              "My internship at Zero Harm AI taught me more about real-world AI ethics than any classroom. Now I'm working at a top tech company, building responsible AI from the start."
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <h4 className="font-semibold mb-2">Marcus Rodriguez</h4>
-            <p className="text-sm text-gray-600 mb-2">MIT CS '23</p>
-            <p className="text-gray-700 text-sm">
-              "The project sponsorship helped fund my research on bias detection in ML models. The paper was accepted at NeurIPS and launched my PhD program."
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <h4 className="font-semibold mb-2">Alex Kim</h4>
-            <p className="text-sm text-gray-600 mb-2">UC Berkeley CS '25</p>
-            <p className="text-gray-700 text-sm">
-              "Currently interning remotely while finishing my degree. Love that I can contribute to tools that help small businesses use AI responsibly."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">How We Fund These Programs</h2>
         <p className="text-gray-700 text-center max-w-3xl mx-auto mb-6">
           Our student programs are funded through our consulting revenue and community donations. 
