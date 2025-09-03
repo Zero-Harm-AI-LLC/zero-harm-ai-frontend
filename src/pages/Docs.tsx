@@ -116,14 +116,6 @@ export default function Docs() {
                                     Docker Container Setup for SMBs
                                 </button>
                             </li>
-                            <li>
-                                <button
-                                    onClick={handleToastClick}
-                                    className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
-                                >
-                                    WordPress Plugin Integration
-                                </button>
-                            </li>
                         </ul>
                         <div className="mt-4 text-sm text-gray-600 bg-blue-50 p-3 rounded">
                             <p>💼 <strong>Need Professional Help?</strong> Our consulting team offers implementation services starting at $2,500 for complete setup and training.</p>
