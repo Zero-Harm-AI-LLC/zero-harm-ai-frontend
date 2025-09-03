@@ -49,7 +49,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Get Started with Responsible AI
+        Get Started with AI Safety
       </motion.h1>
       
       <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">

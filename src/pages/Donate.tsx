@@ -73,33 +73,6 @@ export default function Donate() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Application Requirements</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-semibold mb-3">For Internships</h3>
-            <ul className="list-disc pl-6 text-gray-700 space-y-1">
-              <li>Currently enrolled computer science student</li>
-              <li>Basic programming experience (Python preferred)</li>
-              <li>Interest in AI safety and ethical technology</li>
-              <li>Strong communication skills</li>
-              <li>Available for 15+ hours per week</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-semibold mb-3">For Project Sponsorships</h3>
-            <ul className="list-disc pl-6 text-gray-700 space-y-1">
-              <li>Undergraduate or graduate student</li>
-              <li>Project focused on AI safety, ethics, or privacy</li>
-              <li>Clear timeline and deliverables</li>
-              <li>Faculty advisor support (recommended)</li>
-              <li>Willingness to open source results</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">How We Fund These Programs</h2>
         <p className="text-gray-700 text-center max-w-3xl mx-auto mb-6">
           Our student programs are funded through our consulting revenue and community donations. 
