@@ -3,7 +3,7 @@ import logo from "../assets/privacy-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Our Approach", path: "/features" },
+  { name: "Features", path: "/features" },
   { name: "Docs", path: "/docs" },
   { name: "Contact", path: "/contact" },
   { name: "About", path: "/about" },
