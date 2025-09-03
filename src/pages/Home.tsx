@@ -63,13 +63,6 @@ export default function Home() {
           >
             Get Consulting
           </button>
-
-          <button
-            onClick={() => navigate("/donate")}
-            className="flex items-center justify-center gap-2 px-8 py-3 rounded-md text-gray-700 bg-gray-200 hover:bg-gray-300 font-semibold"
-          >
-            Student Sponsorship
-          </button>
         </motion.div>
       </section>
     </div>

@@ -80,12 +80,6 @@ export default function About() {
           >
             Get Consulting
           </a>
-          <a
-            href="/donate"
-            className="inline-block px-8 py-3 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 font-semibold"
-          >
-            Student Program
-          </a>
         </div>
       </section>
     </div>

@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
 import Docs from "./pages/Docs";
-import Donate from "./pages/Donate";
 import About from "./pages/About";
 import { useEffect } from "react";
 import { API_ENDPOINTS } from "./config";
@@ -24,7 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
         <Route path="/docs" element={<Docs />} />
-        <Route path="/donate" element={<Donate />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

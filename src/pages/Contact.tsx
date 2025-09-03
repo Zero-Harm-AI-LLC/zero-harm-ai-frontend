@@ -164,7 +164,6 @@ export default function Contact() {
           <div className="flex flex-wrap justify-center gap-4 mt-2">
             <a href="/features" className="text-blue-700 underline">Try Our Tools</a>
             <a href="/docs" className="text-blue-700 underline">Documentation</a>
-            <a href="/donate" className="text-blue-700 underline">Student Programs</a>
             <a href="https://github.com/zeroharmai" className="text-blue-700 underline" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
