@@ -137,19 +137,28 @@ export default function Docs() {
                                 <h3 className="font-semibold text-purple-800 mb-2">🎓 For Students & New Engineers</h3>
                                 <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
                                     <li>
-                                        <a href="https://example.com/ai-safety-101" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             AI Safety 101: A Beginner's Guide
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>
-                                        <a href="https://example.com/ethics-checklist" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             Ethical AI Development Checklist
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>
-                                        <a href="https://example.com/student-projects" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             Sample Student Projects & Code
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -158,19 +167,28 @@ export default function Docs() {
                                 <h3 className="font-semibold text-green-800 mb-2">🏢 For Small & Medium Businesses</h3>
                                 <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
                                     <li>
-                                        <a href="https://example.com/smb-ai-guide" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             SMB Guide to Responsible AI Adoption
-                                        </a>
+                                        </button>                                        
                                     </li>
                                     <li>
-                                        <a href="https://example.com/budget-ai-safety" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             AI Safety on a Startup Budget
-                                        </a>
+                                        </button>                                             
                                     </li>
                                     <li>
-                                        <a href="https://example.com/compliance-guide" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                        <button
+                                            onClick={handleToastClick}
+                                            className="text-blue-600 hover:underline active:text-blue-800 transition-colors"
+                                        >
                                             GDPR/CCPA Compliance for AI Systems
-                                        </a>
+                                        </button>                                            
                                     </li>
                                 </ul>
                             </div>
@@ -179,18 +197,18 @@ export default function Docs() {
                                 <h3 className="font-semibold text-blue-800 mb-2">🔬 Research & Technical Papers</h3>
                                 <ul className="list-disc pl-5 text-blue-600 space-y-1 text-sm">
                                     <li>
-                                        <a href="https://example.com/pii-detection-paper" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                            "Open Source PII Detection: A Comparative Study"
+                                        <a href="https://arxiv.org/abs/2309.01029" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            Explainability for Large Language Models: A Survey
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://example.com/smb-ai-risks" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                            "AI Risks in Small Business Environments"
+                                        <a href="https://huggingface.co/blog/JMJM/giskard-llm-testing-and-debugging-hf" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            Introducing the Giskard Bot: Enhancing LLM Testing & Debugging on Hugging Face
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://example.com/democratizing-ai-safety" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
-                                            "Democratizing AI Safety Through Open Source"
+                                        <a href="https://www.youtube.com/watch?v=9haIOplEIGM" target="_blank" rel="noopener noreferrer" className="hover:underline active:text-blue-800 transition-colors">
+                                            Explainable AI explained!
                                         </a>
                                     </li>
                                 </ul>
