@@ -13,7 +13,7 @@ export default function Header() {
   const { pathname } = useLocation();
   return (
     <header className="bg-green-700 text-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
         
         {/* Logo + Title */}
         <div className="flex items-center space-x-3">
@@ -22,11 +22,11 @@ export default function Header() {
             alt="Zero Harm AI Logo"
             className="h-8 w-8"
           />
-          <span className="text-xl font-bold">Zero Harm AI</span>
+          <span className="text-xl font-bold whitespace-nowrap">Zero Harm AI</span>
         </div>
 
         {/* Navigation */}
-        <nav className="space-x-6">
+        <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
           {navItems.map(({ name, path }) => (
             <Link
               key={path}
