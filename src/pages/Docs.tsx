@@ -63,7 +63,7 @@ export default function Docs() {
                             </ul>
                         </div>
                         <button
-                            onClick={handleToastClick}
+                            onClick={() => window.open("https://github.com/zero-harm-ai/zero-harm-ai-detectors", "_blank")}
                             className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors"
                         >
                             Full Documentation & GitHub
