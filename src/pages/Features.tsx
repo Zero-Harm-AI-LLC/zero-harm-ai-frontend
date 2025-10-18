@@ -69,9 +69,9 @@ export default function Features() {
     "🆓 100% free and open source",
     "🐳 Docker deployment ready",
     "🛡️ Baseline sensitive data detection and redaction",
-    "🔌 Easy REST API and Python SDK integration",
+    "🔌 Easy Python library integration",
+    "🤖 AI-Powered Detection or Fast Regex Detection", 
     "🤖 ML trainable for custom enterprise needs",
-    "📊 GDPR and CCPA compliance reporting"
   ];
 
   return (
@@ -119,7 +119,7 @@ export default function Features() {
         </motion.h2>
 
         <p className="text-gray-600 mb-6 text-center max-w-2xl mx-auto">
-          Test our PII detection right in your browser. Try entering an email, phone number, or SSN.
+          Test our PII or harmful content detection right in your browser. Try entering an email, phone number, SSN or harmful text.
         </p>
 
         <div className="max-w-4xl mx-auto">
@@ -130,7 +130,7 @@ export default function Features() {
               transition={{ duration: 0.6 }}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter text like: My email is john.doe@yahoo.com and my phone is 555-222-1234"
+              placeholder="Enter text like: My email is john.doe@yahoo.com or my phone is 555-222-1234"
               className="border p-4 w-full rounded-lg shadow-sm"
               style={{ minHeight: "120px", flex: 1 }}
             />
@@ -199,7 +199,7 @@ export default function Features() {
                   ></path>
                 </svg>
               )}
-              {loading ? "Checking..." : "Check for PII"}
+              {loading ? "Checking..." : "Check for PII or Harmful Data"}
             </motion.button>
           </div>
         </div>
