@@ -10,27 +10,26 @@ export default function Features() {
   const [success, setSuccess] = useState(false);
 
   const checkPrivacy = async () => {
-    setError("");
-    setResult(null);
-    setLoading(true);
-    setSuccess(false);
     try {
       const res = await fetch(API_ENDPOINTS.CHECK_PRIVACY, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: input }),
       });
+      
+      // Log response details
+      console.log('Response status:', res.status);
+      console.log('Response headers:', res.headers);
+      
       if (!res.ok) {
-        throw new Error(`Error: ${res.status} ${res.statusText}`);
+        const errorText = await res.text();
+        console.error('Error response:', errorText);
+        throw new Error(`Error: ${res.status} - ${errorText}`);
       }
-      const data = await res.json();
-      setResult(data);
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 1200);
+      // ... rest of code
     } catch (err: any) {
+      console.error('Full error:', err);
       setError(err.message || "Unknown error occurred");
-    } finally {
-      setLoading(false);
     }
   };
 
