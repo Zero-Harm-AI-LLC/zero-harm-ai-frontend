@@ -10,6 +10,16 @@ export default function Features() {
   const [success, setSuccess] = useState(false);
 
   const checkPrivacy = async () => {
+    if (!input.trim()) {
+      setError("Please enter some text to check");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setResult(null);
+    setSuccess(false);
+
     try {
       const res = await fetch(API_ENDPOINTS.CHECK_PRIVACY, {
         method: "POST",
@@ -26,10 +36,21 @@ export default function Features() {
         console.error('Error response:', errorText);
         throw new Error(`Error: ${res.status} - ${errorText}`);
       }
-      // ... rest of code
+
+      // Parse the JSON response
+      const data = await res.json();
+      console.log('Response data:', data);
+      
+      // Update state with the result
+      setResult(data);
+      setSuccess(true);
+      
     } catch (err: any) {
       console.error('Full error:', err);
       setError(err.message || "Unknown error occurred");
+      setSuccess(false);
+    } finally {
+      setLoading(false);
     }
   };
 
