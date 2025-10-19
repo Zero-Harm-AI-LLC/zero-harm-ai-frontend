@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { API_ENDPOINTS } from "../config";
 
@@ -8,6 +8,34 @@ export default function Features() {
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [backendStatus, setBackendStatus] = useState<"checking" | "ready" | "error">("checking");
+
+  // Health check to wake up the backend service on component mount
+  useEffect(() => {
+    const wakeUpBackend = async () => {
+      try {
+        console.log("Waking up backend service...");
+        const res = await fetch(API_ENDPOINTS.HEALTH_CHECK, {
+          method: "GET",
+        });
+        
+        if (res.ok) {
+          console.log("Backend service is ready");
+          setBackendStatus("ready");
+        } else {
+          console.warn("Backend health check returned non-OK status");
+          setBackendStatus("error");
+        }
+      } catch (err) {
+        console.error("Backend health check failed:", err);
+        // Don't set error status - backend might still work for actual requests
+        // Just log it and let the user try
+        setBackendStatus("ready");
+      }
+    };
+
+    wakeUpBackend();
+  }, []);
 
   const checkPrivacy = async () => {
     if (!input.trim()) {
@@ -185,14 +213,40 @@ export default function Features() {
           ) : null}
 
           <div className="text-center">
+            {backendStatus === "checking" && (
+              <div className="mb-4 text-sm text-gray-600 flex items-center justify-center">
+                <svg
+                  className="animate-spin h-4 w-4 text-gray-600 inline mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </svg>
+                Waking up backend service...
+              </div>
+            )}
+            
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               onClick={checkPrivacy}
-              disabled={loading}
+              disabled={loading || backendStatus === "checking"}
               className={`px-8 py-3 rounded-lg text-white font-semibold ${
-                loading
+                loading || backendStatus === "checking"
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-green-700 hover:bg-green-800"
               }`}
@@ -219,7 +273,11 @@ export default function Features() {
                   ></path>
                 </svg>
               )}
-              {loading ? "Checking..." : "Check for PII or Harmful Data"}
+              {backendStatus === "checking"
+                ? "Warming up backend..."
+                : loading
+                ? "Checking..."
+                : "Check for PII or Harmful Data"}
             </motion.button>
           </div>
         </div>
